@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+	
+		<style>
+			*{font-size:20px; font-family:Calibri;}
+			body{background-color:lightblue;}
+			
+		</style>
+	
+	
+	{% for m in msg %}
+		<h1>{{ m.title }}</h1>
+		{% if m.urlToImage %}
+			<img src={{ m.urlToImage }} style="width:400px; height:auto"></img>
+		{% endif %}
+		<br>
+		<a href={{ m.url }}>Read More</a>
+		<hr>
+	{% endfor %}
+{% endblock %}
